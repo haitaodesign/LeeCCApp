@@ -12,8 +12,13 @@
     "format-code": "yarn run prettier && yarn run lint:fix"
   },
   "dependencies": {
+    "color": "^3.0.0",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
     "react": "16.4.1",
-    "react-native": "0.56.0"
+    "react-native": "0.56.0",
+    "react-native-extended-stylesheet": "^0.8.1",
+    "react-native-vector-icons": "^4.6.0"
   },
   "devDependencies": {
     "babel-jest": "23.2.0",
