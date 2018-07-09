@@ -8,6 +8,15 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
   }
 };

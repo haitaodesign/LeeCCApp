@@ -1,5 +1,5 @@
 {
-  "name": "LeeBlog-RN",
+  "name": "myfirstreactnativeapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "test": "jest",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint ./App --fix",
     "prettier": "prettier --write '*.js'",
     "format-code": "yarn run prettier && yarn run lint:fix"
   },
