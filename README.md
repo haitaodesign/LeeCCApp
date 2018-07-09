@@ -1,2 +1,2 @@
-# MyFirstReactNativeApp
-第一个React Native App
+# LeeBlog-RN
+个人博客——React Native版
