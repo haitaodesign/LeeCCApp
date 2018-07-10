@@ -4,7 +4,7 @@ const styles = EStyleSheet.create({
   constainer: {
     flex: 1,
     alignItems: 'center',
-    alignContent: 'center',
+    justifyContent: 'center',
     backgroundColor: '$primaryBlue'
   }
 })
