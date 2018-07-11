@@ -6,6 +6,7 @@ import { Logo } from '../components/Logo'
 import { InputWithButton } from '../components/TextInput'
 import { ClearButton } from '../components/Button'
 import { LastConverted } from '../components/Text'
+import { Header } from '../components/Header'
 
 const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
@@ -28,6 +29,7 @@ export default class Home extends Component {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="default"/>
+        <Header onPress={this.handlePressBaseCurrency}/>
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
