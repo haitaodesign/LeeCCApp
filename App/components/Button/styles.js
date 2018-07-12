@@ -2,11 +2,12 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 
 const styles = EStyleSheet.create({
   constainer: {
-    alignItems: 'center'
+    flex: 1
   },
   wrapper: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   icon: {
     width: 19,

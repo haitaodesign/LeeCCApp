@@ -46,8 +46,8 @@ export default class Home extends Component {
             base={TEMP_BASE_CURRENCY}
             quote={TEMP_QUOTE_CURRENCY}
             conversionRate={TEMP_CONVERSION_RATE}/>
+          <ClearButton onPress={this.handleSwapCurrency} text="Reverse Currencies"/>
         </KeyboardAvoidingView>
-        <ClearButton onPress={this.handleSwapCurrency} text="Reverse Currencies"/>
       </Container>
     )
   }
