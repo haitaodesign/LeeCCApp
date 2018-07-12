@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
 
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
@@ -30,21 +30,23 @@ export default class Home extends Component {
       <Container>
         <StatusBar translucent={false} barStyle="default"/>
         <Header onPress={this.handlePressBaseCurrency}/>
-        <Logo />
-        <InputWithButton
-          buttonText={TEMP_BASE_CURRENCY}
-          onPress={this.handlePressBaseCurrency}
-          keyboardType="numeric"
-          onChangeText={this.handleOnChangeText}/>
-        <InputWithButton
-          buttonText={TEMP_QUOTE_CURRENCY}
-          onPress={this.handlePressQuoteCurrency}
-          editable={false}/>
-        <LastConverted
-          date={TEMP_LAST_CONVERTED}
-          base={TEMP_BASE_CURRENCY}
-          quote={TEMP_QUOTE_CURRENCY}
-          conversionRate={TEMP_CONVERSION_RATE}/>
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <InputWithButton
+            buttonText={TEMP_BASE_CURRENCY}
+            onPress={this.handlePressBaseCurrency}
+            keyboardType="numeric"
+            onChangeText={this.handleOnChangeText}/>
+          <InputWithButton
+            buttonText={TEMP_QUOTE_CURRENCY}
+            onPress={this.handlePressQuoteCurrency}
+            editable={false}/>
+          <LastConverted
+            date={TEMP_LAST_CONVERTED}
+            base={TEMP_BASE_CURRENCY}
+            quote={TEMP_QUOTE_CURRENCY}
+            conversionRate={TEMP_CONVERSION_RATE}/>
+        </KeyboardAvoidingView>
         <ClearButton onPress={this.handleSwapCurrency} text="Reverse Currencies"/>
       </Container>
     )
