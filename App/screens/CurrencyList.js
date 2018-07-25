@@ -4,10 +4,10 @@ import { View, Text, StatusBar, FlatList } from 'react-native'
 import currencies from '../data/currencies'
 
 import { ListItem, Separator } from '../components/List'
-const TEMP_CURRENT_CURRENCY = 'CAD';
+const TEMP_CURRENT_CURRENCY = 'CAD'
 export default class Currencylist extends Component {
   _handleSelectedOnPress = () => {
-    console.log('on press')
+    this.props.navigation.goBack(null)
   }
   render () {
     return (

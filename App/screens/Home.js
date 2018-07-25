@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
-
+import PropTypes from 'prop-types'
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
 import { InputWithButton } from '../components/TextInput'
@@ -13,11 +13,16 @@ const TEMP_QUOTE_CURRENCY = 'GBP'
 const TEMP_LAST_CONVERTED = new Date()
 const TEMP_CONVERSION_RATE = 0.79739
 export default class Home extends Component {
-  handlePressBaseCurrency () {
+  static propTypes = {
+    navigation: PropTypes.object
+  }
+  handlePressBaseCurrency = () => {
     console.log('press base currency')
+    this.props.navigation.navigate('CurrencyList', { title: 'BaseCurrency' })
   }
   handlePressQuoteCurrency () {
     console.log('press quote currency')
+    // this.props.navigation.navigate('CurrencyList')
   }
   handleSwapCurrency () {
     console.log('press swap currency')
@@ -25,11 +30,15 @@ export default class Home extends Component {
   handleOnChangeText (value) {
     console.log('change text', value)
   }
+  handleOptionsPress = () => {
+    console.log('ddd')
+    this.props.navigation.navigate('Options')
+  }
   render () {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="default"/>
-        <Header onPress={this.handlePressBaseCurrency}/>
+        <Header onPress={this.handleOptionsPress}/>
         <KeyboardAvoidingView behavior="padding">
           <Logo />
           <InputWithButton

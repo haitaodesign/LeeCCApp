@@ -14,14 +14,18 @@
   },
   "dependencies": {
     "color": "^3.0.0",
+    "hoist-non-react-statics": "^3.0.0-rc.1",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.56.0",
+    "react-native-dropdownalert": "^3.5.0",
     "react-native-extended-stylesheet": "^0.8.1",
-    "react-native-vector-icons": "^4.6.0"
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.9.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "babel-jest": "23.2.0",
     "babel-preset-react-native": "^5",
     "eslint": "^5.1.0",
