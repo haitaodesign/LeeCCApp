@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
-import { ScrollView, StatusBar, Platform } from 'react-native'
+import PropTypes from 'prop-types';
+import { ScrollView, StatusBar, Platform, Linking } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { ListItem, Separator } from '../components/List'
+import { connectAlert } from '../components/Alert'
 const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md'
 const ICON_COLOR = '#868686'
 const ICON_SIZE = 23
-export default class Options extends Component {
+class Options extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+    alertWithType: PropTypes.func
+  }
   _handlePressThemes = () => {
     this.props.navigation.navigate('Themes')
   }
   _handlePressSite () {
+    Linking.openURL('htffftp://fixer.io').catch(() => {
+      console.log(this.props)
+      this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now.")
+    })
   }
   render () {
     return (
@@ -30,3 +40,5 @@ export default class Options extends Component {
     )
   }
 }
+
+export default connectAlert(Options)
