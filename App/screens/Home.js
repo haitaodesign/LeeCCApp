@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
 import { InputWithButton } from '../components/TextInput'
@@ -14,7 +15,7 @@ const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
 const TEMP_LAST_CONVERTED = new Date()
 const TEMP_CONVERSION_RATE = 0.79739
-export default class Home extends Component {
+class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object
   }
@@ -26,11 +27,11 @@ export default class Home extends Component {
     console.log('press quote currency')
     // this.props.navigation.navigate('CurrencyList')
   }
-  handleSwapCurrency () {
-    console.log(swapCurrency())
+  handleSwapCurrency = () => {
+    this.props.dispatch(swapCurrency())
   }
-  handleOnChangeText (value) {
-    console.log(changeCurrencyAmount(value))
+  handleOnChangeText = (value) => {
+    this.props.dispatch(changeCurrencyAmount(value))
   }
   handleOptionsPress = () => {
     console.log('ddd')
@@ -63,3 +64,5 @@ export default class Home extends Component {
     )
   }
 }
+
+export default connect()(Home)
