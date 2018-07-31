@@ -1,4 +1,4 @@
-import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY } from '../actions/currencies'
+import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY, CHANGE_BASE_CURRENCY, CHANGE_QUOTE_CURRENCY } from '../actions/currencies'
 
 // const initialState = {
 //   baseCurrency: 'USD',

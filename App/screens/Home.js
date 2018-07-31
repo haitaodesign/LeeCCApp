@@ -22,10 +22,10 @@ class Home extends Component {
     isFetching: PropTypes.bool
   }
   handlePressBaseCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'BaseCurrency' })
+    this.props.navigation.navigate('CurrencyList', { title: 'BaseCurrency', type: 'base' })
   }
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'QuoteCurrency' })
+    this.props.navigation.navigate('CurrencyList', { title: 'QuoteCurrency', type: 'quote' })
   }
   handleSwapCurrency = () => {
     this.props.dispatch(swapCurrency())
@@ -34,7 +34,6 @@ class Home extends Component {
     this.props.dispatch(changeCurrencyAmount(value))
   }
   handleOptionsPress = () => {
-    console.log('ddd')
     this.props.navigation.navigate('Options')
   }
   render () {
