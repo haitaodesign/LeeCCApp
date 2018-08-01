@@ -12,7 +12,6 @@ class Currencylist extends Component {
     dispatch: PropTypes.func
   }
   _handleSelectedOnPress = (currency) => {
-    console.log(currency)
     const { type } = this.props.navigation.state.params
     if (type === 'base') {
       this.props.dispatch(changeBaseCurrency(currency))
