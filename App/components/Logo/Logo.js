@@ -12,15 +12,15 @@ export default class Logo extends Component {
     }
   }
   componentDidMount () {
-    const name = Platform.OS === 'ios' ? 'Will' : 'Did';
+    const name = Platform.OS === 'ios' ? 'Will' : 'Did'
     this.keyboardDidShowListener = Keyboard.addListener(
       `keyboard${name}Show`,
-      this.keyboardWillShow,
-    );
+      this.keyboardWillShow
+    )
     this.keyboardDidHideListener = Keyboard.addListener(
       `keyboard${name}Hide`,
-      this.keyboardWillHide,
-    );
+      this.keyboardWillHide
+    )
   }
   componentWillUnmount () {
     this.keyboardDidShowListener.remove()
@@ -47,30 +47,30 @@ export default class Logo extends Component {
       Animated.timing(this.state.imageWidth, {
         toValue: styles.$largeImageSize,
         duration: ANIMATION_DURATION
-      }),
+      })
     ]).start()
   }
   render () {
     const containerImageStyles = [
       styles.containerImage,
-      { width: this.state.containerImageWidth, height: this.state.containerImageWidth },
-    ];
+      { width: this.state.containerImageWidth, height: this.state.containerImageWidth }
+    ]
     const imageStyles = [
       styles.logo,
       { width: this.state.imageWidth },
-      this.props.tintColor ? { tintColor: this.props.tintColor } : null,
-    ];
+      this.props.tintColor ? { tintColor: this.props.tintColor } : null
+    ]
     return (
       <View style={styles.container}>
         <Animated.View style={containerImageStyles}>
           <Animated.Image
-              resizeMode="contain"
-              style={[StyleSheet.absoluteFill, containerImageStyles]}
-              source={require('./images/background.png')}/>
-          <Animated.Image 
-              resizeMode="contain" 
-              style={imageStyles} 
-              source={require('./images/logo.png')} />
+            resizeMode="contain"
+            style={[StyleSheet.absoluteFill, containerImageStyles]}
+            source={require('./images/background.png')}/>
+          <Animated.Image
+            resizeMode="contain"
+            style={imageStyles}
+            source={require('./images/logo.png')} />
         </Animated.View>
         <Text style={styles.text}>Currency Converter</Text>
       </View>
