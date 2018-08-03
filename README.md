@@ -1,2 +1,2 @@
-# LeeBlog-RN
-个人博客——React Native版
+# MyFirstReactNativeApp
+汇率计算器第一版
