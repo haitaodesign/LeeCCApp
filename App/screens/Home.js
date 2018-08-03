@@ -47,7 +47,7 @@ class Home extends Component {
     }
     return (
       <Container backgroundColor={this.props.primaryColor}>
-        <StatusBar translucent={false} barStyle="default"/>
+        <StatusBar translucent={false} barStyle="light-content" backgroundColor={this.props.primaryColor}/>
         <Header onPress={this.handleOptionsPress}/>
         <KeyboardAvoidingView behavior="padding">
           <Logo tintColor={this.props.primaryColor}/>
