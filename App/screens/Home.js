@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
+import { View, StatusBar, KeyboardAvoidingView,Platform } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Container } from '../components/Container'
@@ -49,7 +49,7 @@ class Home extends Component {
       <Container backgroundColor={this.props.primaryColor}>
         <StatusBar translucent={false} barStyle="light-content" backgroundColor={this.props.primaryColor}/>
         <Header onPress={this.handleOptionsPress}/>
-        <KeyboardAvoidingView behavior="padding">
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : ''}>
           <Logo tintColor={this.props.primaryColor}/>
           <InputWithButton
             buttonText={this.props.baseCurrency}
