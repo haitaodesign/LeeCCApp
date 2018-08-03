@@ -16,7 +16,7 @@ class Options extends Component {
     this.props.navigation.navigate('Themes')
   }
   _handlePressSite () {
-    Linking.openURL('htffftp://fixer.io').catch(() => {
+    Linking.openURL('http://fixer.io').catch(() => {
       console.log(this.props)
       this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now.")
     })
