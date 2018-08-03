@@ -53,6 +53,5 @@ export default createStackNavigator({
   }
 }, {
   mode: 'modal',
-  headerMode: 'none',
-  cardStyle: { paddingTop: StatusBar.currentHeight }
+  headerMode: 'none'
 })
