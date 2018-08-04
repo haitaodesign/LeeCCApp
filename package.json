@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "ios": "react-native run-ios",
-    "an": "react-native run-android",
+    "android": "react-native run-android",
     "lint": "eslint .",
     "lint:fix": "eslint ./App --fix",
     "prettier": "prettier --write '*.js'",
