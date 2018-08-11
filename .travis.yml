@@ -1,15 +1,15 @@
 language: android
 components:
-  - build-tools-26.0.3
-  - android-26
-  - extra-google-google_play_services
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - addon-google_apis-google-26
+- build-tools-26.0.3
+- android-26
+- extra-google-google_play_services
+- extra-google-m2repository
+- extra-android-m2repository
+- addon-google_apis-google-26
 licenses:
-  - 'android-sdk-preview-license-52d11cd2'
-  - 'android-sdk-license-.+'
-  - 'google-gdk-license-.+'
+- android-sdk-preview-license-52d11cd2
+- android-sdk-license-.+
+- google-gdk-license-.+
 jdk: oraclejdk8
 cache: yarn
 before_install:
@@ -17,23 +17,17 @@ before_install:
 - node --version
 - curl -o- -L https://yarnpkg.com/install.sh | bash
 - export PATH=$HOME/.yarn/bin:$PATH
-
-
-addons: 
-  apt:
+addons:
+  apt: 
   sources:
-  - sourceline:  'deb https://dl.yarnpkg.com/debian/ stable main'
-    key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+  - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+    key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
     packages:
-      - yarn
-
-
+    - yarn
 install:
 - yarn
-
 script:
 - yarn run lint
-
 before_deploy:
 - bash ci/.travis-android-license-bugfix.sh
 - echo y | android update sdk --no-ui --all --filter build-tools-26.0.1
@@ -46,13 +40,11 @@ before_deploy:
 - echo y | android update sdk -u -a -t extra-google-m2repository
 - echo y | android update sdk -u -a -t extra-android-m2repository
 - cd android && ./gradlew assembleRelease
-
 deploy:
   provider: releases
-  skip_cleanup: true
   api_key:
-    secure: d8ede322ba7dcf8c3af869b5fb92e997fe237687
-  file: $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release.apk
+    secure: kdSshYj/3u4dDDgV9zonI/eQhal65wmMBFeIuMpmJof/RH/W29WvqUoZBGb4OLl6zd4O7RHR2Tvjo3SaFgBUB6hvZN8Vj0gA75M2BGUZAoga6q4wVIb66pO2jnOBzNG2+qPyrh58uEtumpMqHS6jWLEfK9TXByBCL0XWeWSX3Lkhmi3T3/KaHUp5xUNdsnG1WQpxuJnhcn1NQOW3jQp6AC6fCxojoxvfTQKoDtLo3hzGTAYWo9k9tiYp7Eb0ks+xSkUQDaafGDd9pFaXTi6N6fh0UY5ZqsLYMyi/Knl+9nlq1h8vvWRUAfU5zMuC70dShI2s0H7HUIj19vLxb9TN4nidzoS3+Ye5qY7QnSR44HyyeALiqOhqQEjaDXwkRboWQ9sD318zOl9Gxxkp6+Mu2bDKK9sfDauF2YQLNMN9CEhfcOvszeY1SD6wF73eSrVk/eT44/PI1xuwkW+95iyKlYYExKQjhLEbNhSo93CE3MbcZFoUmeLtBImduTRIdpzhZpTmG5AXXiXGnAp77jpjrNJjbLD0DA2pqpv1bjT4gwnxSB+caO+vm3ncvCtuPczDuD5vuidCNSbz8Qn665zfp3Zu5QhAd//QWdNNrzi+GwVaAqLJvizQ9gTeveOSzdGZz0F997LI94Tm7+mpBPlQkZo8EA0XbY21l6WAjmg0scs=
+  file: "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release.apk"
   on:
     repo: haitaodesign/LeeCCApp
     tags: true
