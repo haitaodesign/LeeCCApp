@@ -7,7 +7,7 @@
     "test": "jest",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "lint": "eslint .",
+    "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "prettier": "prettier --write '*.js'",
     "format-code": "yarn run prettier && yarn run lint:fix"
