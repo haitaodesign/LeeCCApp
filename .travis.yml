@@ -32,7 +32,6 @@ install:
 - yarn
 
 script:
-- yarn run format-code
 
 before_deploy:
   - cd android && ./gradlew assembleRelease
