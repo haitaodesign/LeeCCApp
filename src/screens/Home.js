@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar, KeyboardAvoidingView,Platform } from 'react-native'
+import { View, StatusBar, KeyboardAvoidingView, Platform } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Container } from '../components/Container'
@@ -10,7 +10,7 @@ import { LastConverted } from '../components/Text'
 import { Header } from '../components/Header'
 import { connectAlert } from '../components/Alert'
 
-import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../actions/currencies'
+import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../store/actions/currencies'
 class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object,

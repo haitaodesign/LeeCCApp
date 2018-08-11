@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import currencies from '../data/currencies'
 import { ListItem, Separator } from '../components/List'
-import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies'
+import { changeBaseCurrency, changeQuoteCurrency } from '../store/actions/currencies'
 class Currencylist extends Component {
   static propTypes = {
     navigation: PropTypes.object,
