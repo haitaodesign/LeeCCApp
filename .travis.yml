@@ -35,6 +35,7 @@ script:
 - yarn run lint
 
 before_deploy:
+- bash ci/.travis-android-license-bugfix.sh
 - echo y | android update sdk --no-ui --all --filter build-tools-26.0.3
 - echo y | android update sdk -u -a -t tools
 - echo y | android update sdk -u -a -t platform-tools
