@@ -1,0 +1,43 @@
+language: android
+jdk: oraclejdk8
+cache: yarn
+befor_install:
+- nvm install 10.0.0
+- node --version
+
+
+addons: 
+  apt:
+  sources:
+  - sourceline:  'deb https://dl.yarnpkg.com/debian/ stable main'
+    key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+    packages:
+      - yarn
+
+
+install:
+- yarn install 
+
+script:
+- npm run format-code
+
+before_deploy:
+  - echo y | android update sdk --no-ui --all --filter build-tools-26.1.1
+  - echo y | android update sdk -u -a -t tools
+  - echo y | android update sdk -u -a -t platform-tools
+  - echo y | android update sdk -u -a -t build-tools-26.1.1
+  - echo y | android update sdk -u -a -t android-23
+  - echo y | android update sdk -u -a -t android-25
+  - echo y | android update sdk -u -a -t extra-google-m2repository
+  - echo y | android update sdk -u -a -t extra-android-m2repository
+  - cd android && ./gradlew assembleRelease
+
+deploy:
+  provider: release
+  skip_cleanup: true
+  api_key:
+    secure: 
+  file: $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release.apk
+  on:
+    repo: haitaodesign/LeeCCApp
+    tags: true
