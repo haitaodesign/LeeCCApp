@@ -1,4 +1,6 @@
 # LeeCCApp
+[![Build Status](https://travis-ci.org/haitaodesign/LeeCCApp.svg?branch=master)](https://travis-ci.org/haitaodesign/LeeCCApp)
+
 >汇率计算器第一版
 # 开发环境搭建
 
