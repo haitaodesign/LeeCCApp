@@ -1,4 +1,15 @@
 language: android
+components:
+  - build-tools-26.0.3
+  - android-26
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - addon-google_apis-google-26
+licenses:
+  - 'android-sdk-preview-license-52d11cd2'
+  - 'android-sdk-license-.+'
+  - 'google-gdk-license-.+'
 jdk: oraclejdk8
 cache: yarn
 befor_install:
@@ -22,14 +33,6 @@ script:
 - npm run format-code
 
 before_deploy:
-  - echo y | android update sdk --no-ui --all --filter build-tools-26.1.1
-  - echo y | android update sdk -u -a -t tools
-  - echo y | android update sdk -u -a -t platform-tools
-  - echo y | android update sdk -u -a -t build-tools-26.1.1
-  - echo y | android update sdk -u -a -t android-23
-  - echo y | android update sdk -u -a -t android-25
-  - echo y | android update sdk -u -a -t extra-google-m2repository
-  - echo y | android update sdk -u -a -t extra-android-m2repository
   - cd android && ./gradlew assembleRelease
 
 deploy:
