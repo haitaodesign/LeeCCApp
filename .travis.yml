@@ -32,6 +32,7 @@ install:
 - yarn
 
 script:
+- yarn run lint
 
 before_deploy:
   - cd android && ./gradlew assembleRelease
