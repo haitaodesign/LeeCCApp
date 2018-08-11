@@ -15,7 +15,6 @@ cache: yarn
 before_install:
 - nvm install 10.0.0
 - node --version
-- npm i yarn
 
 
 addons: 
@@ -28,7 +27,7 @@ addons:
 
 
 install:
-- yarn install 
+- yarn
 
 script:
 - npm run format-code
@@ -40,7 +39,7 @@ deploy:
   provider: release
   skip_cleanup: true
   api_key:
-    secure: 
+    secure: 93b3223f8fc05be6321a5eda2bc45047c30bf821
   file: $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release.apk
   on:
     repo: haitaodesign/LeeCCApp
