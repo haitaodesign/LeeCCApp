@@ -13,7 +13,7 @@ licenses:
 jdk: oraclejdk8
 cache: yarn
 before_install:
-- nvm install 10.0.0
+- nvm install 8.11.3
 - node --version
 - curl -o- -L https://yarnpkg.com/install.sh | bash
 - export PATH=$HOME/.yarn/bin:$PATH
