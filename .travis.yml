@@ -48,7 +48,7 @@ before_deploy:
 - cd android && ./gradlew assembleRelease
 
 deploy:
-  provider: release
+  provider: releases
   skip_cleanup: true
   api_key:
     secure: 93b3223f8fc05be6321a5eda2bc45047c30bf821
