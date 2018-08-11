@@ -30,5 +30,5 @@ export default [
   'THB',
   'TRY',
   'USD',
-  'ZAR',
-];
+  'ZAR'
+]
