@@ -51,7 +51,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: 7d693ed2a66e6199ba1631b26e66987fbf3696ad
+    secure: c4f9cd8d7532bc9d4d017c18ae4c192436550454
   file: $TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-release.apk
   on:
     repo: haitaodesign/LeeCCApp
