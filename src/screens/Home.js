@@ -49,7 +49,7 @@ class Home extends Component {
     this.props.navigation.navigate('Options')
   }
   render () {
-    let quotePrice = '...测试'
+    let quotePrice = '...'
     if (!this.props.isFetching) {
       quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2)
     }
