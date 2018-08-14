@@ -1,6 +1,6 @@
 # LeeCCApp
 [![Build Status](https://travis-ci.org/haitaodesign/LeeCCApp.svg?branch=master)](https://travis-ci.org/haitaodesign/LeeCCApp)
-
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 >汇率计算器第一版
 ## 使用项目
 1. 依赖安装
